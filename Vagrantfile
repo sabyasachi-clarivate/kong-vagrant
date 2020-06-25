@@ -92,13 +92,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   if not source == ""
     config.vm.synced_folder source, "/kong"
-    config.vm.synced_folder source, "/vagrant"
+   
   end
   if not plugin_source == ""
     config.vm.synced_folder plugin_source, "/kong-plugin"
   end
   config.vm.synced_folder "kong", "/kong", type: "rsync"
-  config.vm.synced_folder "vagrant", "/vagrant", type: "rsync"
+  
 
   config.vm.network :forwarded_port, guest: 8000, host: 8000
   config.vm.network :forwarded_port, guest: 8001, host: 8001

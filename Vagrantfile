@@ -99,6 +99,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   config.vm.synced_folder "kong", "/kong", type: "rsync"
   config.vm.synced_folder ".", "/vagrant", type: "rsync"
+  config.vm.synced_folder "../plugins", "/kong-plugin", type: "rsync"
   
 
   config.vm.network :forwarded_port, guest: 8000, host: 8000
